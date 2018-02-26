@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     TextView one,two,three,four,five,six,seven,eight,nine,zero,point,allClear;
     TextView unitOne,unitTwo, up, down,equals;
     ImageView selectUnit;
-    String upTempString = "" , downTempString = "" , whichUnit = "down" , itemOne = "" , itemTwo = "" , whichUnitIsSelected = "LengthUnit";
+    String upTempString = "" , downTempString = "" , whichUnit = "up" , itemOne = "" , itemTwo = "" , whichUnitIsSelected = "LengthUnit";
     Double input,result;
     Spinner unitOneSpinner,unitTwoSpinner;
     String[] length = { "Inches", "Feets", "Yards", "Miles", "Millimetres", "Centimetres" , "Metres" , "Kilometres"  };
@@ -378,6 +378,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        unitOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                whichUnit = "up";
+                getWhichUnit(whichUnit);
+            }
+        });
 
         up.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -387,13 +394,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        down.setOnClickListener(new View.OnClickListener() {
+       /* unitTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 whichUnit = "down";
                 getWhichUnit(whichUnit);
             }
-        });
+        });*/
+
+       /* down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                whichUnit = "down";
+                getWhichUnit(whichUnit);
+            }
+        }); */
 
         selectUnit.setOnClickListener(new View.OnClickListener() {
             @Override
