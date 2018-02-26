@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.abhijeet.convertoroid.R;
 
@@ -20,11 +22,18 @@ public class MainActivity extends AppCompatActivity {
     TextView one,two,three,four,five,six,seven,eight,nine,zero,point,allClear;
     TextView unitOne,unitTwo, up, down,equals;
     ImageView selectUnit;
-    String upTempString = "" , downTempString = "" , whichUnit = "" , itemOne = "" , itemTwo = "";
+    String upTempString = "" , downTempString = "" , whichUnit = "down" , itemOne = "" , itemTwo = "" , whichUnitIsSelected = "LengthUnit";
     Double input,result;
     Spinner unitOneSpinner,unitTwoSpinner;
     String[] length = { "Inches", "Feets", "Yards", "Miles", "Millimetres", "Centimetres" , "Metres" , "Kilometres"  };
-    ArrayAdapter aa;
+    String[] volume = { "Gallon (us)" , "Gallon (uk)" , "Litre" , "Millilitre" , "Cubic centimetre" , "Cubic metre" , "Cubic inch" , "Cubic foot"};
+    String[] area = { "Acre" , "Are" , "Hectare" , "Square centimetre" , "Square foot" , "Square inch" , "Square metre" };
+    String[] temperature = { "Celsius" , "Fahrenheit" , "Kelvin" };
+    String[] weight = { "Ton" , "Ton (us)" , "Ton (uk)" , "Pound" , "Ounce" , "Kilogram" , "Gram" };
+    String[] data = { "Bit" , "Byte" , "Kilobyte" , "Megabyte" , "Gigabyte" , "Terabyte" };
+    ArrayAdapter adapter;
+    ImageView unitLength,unitVolume,unitArea,unitTemperature,unitWeight,unitData;
+    LinearLayout unitMenu,Main;
 
 
     @Override
@@ -32,12 +41,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        InitUiElements();
-        InitFont();
-        InitSetOnClickListners();
+        loadActivity();
 
     }
 
+    public void loadActivity()
+    {
+        InitUiElements();
+        InitFont();
+        InitSetOnClickListners();
+    }
 
 
     public void InitUiElements()
@@ -67,17 +80,67 @@ public class MainActivity extends AppCompatActivity {
         unitTwoSpinner = findViewById(R.id.unit_two_spinner);
         equals = findViewById(R.id.equals);
 
+        unitLength = findViewById(R.id.unit_length);
+        unitVolume = findViewById(R.id.unit_volume);
+        unitArea = findViewById(R.id.unit_area);
+        unitTemperature = findViewById(R.id.unit_temperature);
+        unitWeight = findViewById(R.id.unit_weight);
+        unitData = findViewById(R.id.unit_data);
 
-        aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,length);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        unitOneSpinner.setAdapter(aa);
-        unitTwoSpinner.setAdapter(aa);
+        unitMenu = findViewById(R.id.unit_menu);
+        Main = findViewById(R.id.main);
+
+
+        switch (whichUnitIsSelected)
+        {
+            case "LengthUnit" : //lengthAdapter
+                adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,length);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                unitOneSpinner.setAdapter(adapter);
+                unitTwoSpinner.setAdapter(adapter);
+                break;
+
+            case "VolumeUnit" : //volumeAdapter
+                adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,volume);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                unitOneSpinner.setAdapter(adapter);
+                unitTwoSpinner.setAdapter(adapter);
+                break;
+
+            case "AreaUnit" : //volumeAdapter
+                adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,area);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                unitOneSpinner.setAdapter(adapter);
+                unitTwoSpinner.setAdapter(adapter);
+                break;
+
+            case "TemperatureUnit" : //volumeAdapter
+                adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,temperature);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                unitOneSpinner.setAdapter(adapter);
+                unitTwoSpinner.setAdapter(adapter);
+                break;
+
+            case "WeightUnit" : //volumeAdapter
+                adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,weight);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                unitOneSpinner.setAdapter(adapter);
+                unitTwoSpinner.setAdapter(adapter);
+                break;
+
+            case "DataUnit" : //volumeAdapter
+                adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,data);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                unitOneSpinner.setAdapter(adapter);
+                unitTwoSpinner.setAdapter(adapter);
+                break;
+
+
+
+        }
 
 
     }
-
-
-
 
     public void InitFont()
     {
@@ -335,7 +398,8 @@ public class MainActivity extends AppCompatActivity {
         selectUnit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Main.setVisibility(View.GONE);
+                unitMenu.setVisibility(View.VISIBLE);
             }
         });
 
@@ -370,9 +434,78 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                unitTwo.setText(LengthConvert(itemOne,itemTwo).toString());
+                if (Objects.equals(upTempString, "") && Objects.equals(downTempString, ""))
+                {
+                    Toast.makeText(MainActivity.this, "Give some input", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    unitTwo.setText(LengthConvert(itemOne,itemTwo).toString());
+                }
+
             }
         });
+
+        unitLength.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                whichUnitIsSelected = "LengthUnit";
+                Main.setVisibility(View.VISIBLE);
+                unitMenu.setVisibility(View.GONE);
+                loadActivity();
+            }
+        });
+
+        unitVolume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                whichUnitIsSelected = "VolumeUnit";
+                Main.setVisibility(View.VISIBLE);
+                unitMenu.setVisibility(View.GONE);
+                loadActivity();
+            }
+        });
+
+        unitArea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                whichUnitIsSelected = "AreaUnit";
+                Main.setVisibility(View.VISIBLE);
+                unitMenu.setVisibility(View.GONE);
+                loadActivity();
+            }
+        });
+
+        unitTemperature.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                whichUnitIsSelected = "TemperatureUnit";
+                Main.setVisibility(View.VISIBLE);
+                unitMenu.setVisibility(View.GONE);
+                loadActivity();
+            }
+        });
+
+        unitWeight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                whichUnitIsSelected = "WeightUnit";
+                Main.setVisibility(View.VISIBLE);
+                unitMenu.setVisibility(View.GONE);
+                loadActivity();
+            }
+        });
+
+        unitData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                whichUnitIsSelected = "DataUnit";
+                Main.setVisibility(View.VISIBLE);
+                unitMenu.setVisibility(View.GONE);
+                loadActivity();
+            }
+        });
+
 
 
     }
@@ -692,6 +825,12 @@ public class MainActivity extends AppCompatActivity {
 
         return result;
 
+    }
+
+    //Volume - conversion
+    public Double VolumeConvert(String itemOne, String itemTwo)
+    {
+        return result;
     }
 
 }

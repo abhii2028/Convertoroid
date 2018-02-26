@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_weight="1"
+        >
+
+        <ImageView
+            android:id="@+id/unit_length"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/length"
+            android:padding="50dp"
+            android:background="@drawable/border"
+            />
+
+        <ImageView
+            android:id="@+id/unit_volume"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/volume"
+            android:padding="50dp"
+            android:background="@drawable/border"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_weight="1"
+        >
+
+        <ImageView
+            android:id="@+id/unit_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/area"
+            android:padding="50dp"
+            android:background="@drawable/border"
+            />
+
+        <ImageView
+            android:id="@+id/unit_temperature"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/temperature"
+            android:padding="50dp"
+            android:background="@drawable/border"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_weight="1"
+        >
+
+        <ImageView
+            android:id="@+id/unit_weight"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/weight"
+            android:padding="50dp"
+            android:background="@drawable/border"
+            />
+
+        <ImageView
+            android:id="@+id/unit_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/data"
+            android:padding="50dp"
+            android:background="@drawable/border"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

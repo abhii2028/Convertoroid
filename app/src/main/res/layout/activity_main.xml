@@ -4,6 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <!--menu-->
+    <include
+        android:id="@+id/unit_menu"
+        layout="@layout/unit_menu"
+        android:visibility="gone"
+        />
+    <!--main-->
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -355,13 +370,15 @@
                 android:text="="
                 android:gravity="center"
                 android:textSize="40sp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryDark"
                 android:layout_weight="1"
-                android:background="@drawable/border"
+                android:background="@color/colorPrimary"
                 />
 
 
         </LinearLayout>
+
+    </LinearLayout>
 
     </LinearLayout>
 
