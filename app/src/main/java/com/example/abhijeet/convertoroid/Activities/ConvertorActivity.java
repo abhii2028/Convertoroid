@@ -16,8 +16,7 @@ import com.example.abhijeet.convertoroid.R;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
-
+public class ConvertorActivity extends AppCompatActivity {
 
     TextView one,two,three,four,five,six,seven,eight,nine,zero,point,allClear;
     TextView unitOne,unitTwo, up, down,equals;
@@ -35,14 +34,12 @@ public class MainActivity extends AppCompatActivity {
     ImageView unitLength,unitVolume,unitArea,unitTemperature,unitWeight,unitData;
     LinearLayout unitMenu,Main;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_convertor);
 
         loadActivity();
-
     }
 
     public void loadActivity()
@@ -451,7 +448,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (Objects.equals(upTempString, "") && Objects.equals(downTempString, ""))
                 {
-                    Toast.makeText(MainActivity.this, "Give some input", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ConvertorActivity.this, "Give some input", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -527,14 +524,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void getEquationAns(String tempString) {
 
-       if (Objects.equals(getWhichUnit(whichUnit), "up"))
-       {
-           unitOne.setText(tempString);
-       }
-       else
-       {
-           unitTwo.setText(tempString);
-       }
+        if (Objects.equals(getWhichUnit(whichUnit), "up"))
+        {
+            unitOne.setText(tempString);
+        }
+        else
+        {
+            unitTwo.setText(tempString);
+        }
 
     }
 
@@ -542,7 +539,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (Objects.equals(whichUnit,"up"))
         {
-           return "up";
+            return "up";
         }
         else
         {
@@ -847,5 +844,6 @@ public class MainActivity extends AppCompatActivity {
     {
         return result;
     }
+
 
 }
