@@ -114,7 +114,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2"
             >
 
             <ImageView
@@ -122,16 +121,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/menu"
-                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 />
 
-            <ImageView
+            <TextView
+                android:id="@+id/click"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/back"
                 android:layout_margin="10dp"
-                android:layout_weight="1"
+                android:layout_weight="0.2"
+                android:text="Click icon to select units"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
                 />
 
         </LinearLayout>
@@ -194,10 +197,10 @@
                     android:layout_height="match_parent"
                     android:text="+/-"
                     android:gravity="center"
-                    android:textSize="30sp"
                     android:textColor="@color/colorPrimary"
                     android:layout_weight="1"
                     android:background="@drawable/border"
+                    android:textSize="30sp"
                     />
 
             </LinearLayout>

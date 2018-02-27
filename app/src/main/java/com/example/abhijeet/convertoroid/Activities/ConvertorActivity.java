@@ -1,5 +1,6 @@
 package com.example.abhijeet.convertoroid.Activities;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +20,7 @@ import java.util.Objects;
 public class ConvertorActivity extends AppCompatActivity {
 
     TextView one,two,three,four,five,six,seven,eight,nine,zero,point,allClear;
-    TextView unitOne,unitTwo, up, down,equals;
+    TextView unitOne,unitTwo, up, down,equals,click,calculator;
     ImageView selectUnit;
     String upTempString = "" , downTempString = "" , whichUnit = "up" , itemOne = "" , itemTwo = "" , whichUnitIsSelected = "LengthUnit";
     Double input,result;
@@ -86,6 +87,9 @@ public class ConvertorActivity extends AppCompatActivity {
 
         unitMenu = findViewById(R.id.unit_menu);
         Main = findViewById(R.id.main);
+
+        click = findViewById(R.id.click);
+        calculator = findViewById(R.id.calculator);
 
 
         switch (whichUnitIsSelected)
@@ -166,6 +170,7 @@ public class ConvertorActivity extends AppCompatActivity {
         allClear.setTypeface(latoBold);
         up.setTypeface(latoBold);
         down.setTypeface(latoBold);
+        click.setTypeface(latoThin);
 
     }
 
@@ -391,27 +396,34 @@ public class ConvertorActivity extends AppCompatActivity {
             }
         });
 
-       /* unitTwo.setOnClickListener(new View.OnClickListener() {
+        unitTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 whichUnit = "down";
                 getWhichUnit(whichUnit);
             }
-        });*/
+        });
 
-       /* down.setOnClickListener(new View.OnClickListener() {
+       down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 whichUnit = "down";
                 getWhichUnit(whichUnit);
             }
-        }); */
+        });
 
         selectUnit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Main.setVisibility(View.GONE);
                 unitMenu.setVisibility(View.VISIBLE);
+            }
+        });
+
+        calculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ConvertorActivity.this,CalculatorActivity.class));
             }
         });
 
@@ -446,34 +458,7 @@ public class ConvertorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (Objects.equals(upTempString, "") && Objects.equals(downTempString, ""))
-                {
-                    Toast.makeText(ConvertorActivity.this, "Give some input", Toast.LENGTH_SHORT).show();
-                }
-                else if (Objects.equals(whichUnitIsSelected, "LengthUnit"))
-                {
-                    unitTwo.setText(LengthConvert(itemOne,itemTwo).toString());
-                }
-                else if (Objects.equals(whichUnitIsSelected, "VolumeUnit"))
-                {
-                    unitTwo.setText(VolumeConvert(itemOne,itemTwo).toString());
-                }
-                else if (Objects.equals(whichUnitIsSelected, "AreaUnit"))
-                {
-                    unitTwo.setText(AreaConvert(itemOne,itemTwo).toString());
-                }
-                else if (Objects.equals(whichUnitIsSelected, "TemperatureUnit"))
-                {
-                    unitTwo.setText(TemperatureConvert(itemOne,itemTwo).toString());
-                }
-                else if (Objects.equals(whichUnitIsSelected, "WeightUnit"))
-                {
-                    unitTwo.setText(WeightConvert(itemOne,itemTwo).toString());
-                }
-                else if (Objects.equals(whichUnitIsSelected, "DataUnit"))
-                {
-                    unitTwo.setText(DataConvert(itemOne,itemTwo).toString());
-                }
+                calculation();
 
             }
         });
@@ -564,6 +549,38 @@ public class ConvertorActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void calculation()
+    {
+        if (Objects.equals(upTempString, "") && Objects.equals(downTempString, ""))
+        {
+            Toast.makeText(ConvertorActivity.this, "Give some input", Toast.LENGTH_SHORT).show();
+        }
+        else if (Objects.equals(whichUnitIsSelected, "LengthUnit"))
+        {
+            unitTwo.setText(LengthConvert(itemOne,itemTwo).toString());
+        }
+        else if (Objects.equals(whichUnitIsSelected, "VolumeUnit"))
+        {
+            unitTwo.setText(VolumeConvert(itemOne,itemTwo).toString());
+        }
+        else if (Objects.equals(whichUnitIsSelected, "AreaUnit"))
+        {
+            unitTwo.setText(AreaConvert(itemOne,itemTwo).toString());
+        }
+        else if (Objects.equals(whichUnitIsSelected, "TemperatureUnit"))
+        {
+            unitTwo.setText(TemperatureConvert(itemOne,itemTwo).toString());
+        }
+        else if (Objects.equals(whichUnitIsSelected, "WeightUnit"))
+        {
+            unitTwo.setText(WeightConvert(itemOne,itemTwo).toString());
+        }
+        else if (Objects.equals(whichUnitIsSelected, "DataUnit"))
+        {
+            unitTwo.setText(DataConvert(itemOne,itemTwo).toString());
+        }
     }
 
     private void getEquationAns(String tempString) {
