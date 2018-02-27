@@ -553,7 +553,7 @@ public class ConvertorActivity extends AppCompatActivity {
 
     public void calculation()
     {
-        if (Objects.equals(upTempString, "") || Objects.equals(downTempString, ""))
+        if (Objects.equals(upTempString, ""))
         {
             Toast.makeText(ConvertorActivity.this, "Give some input", Toast.LENGTH_SHORT).show();
         }
