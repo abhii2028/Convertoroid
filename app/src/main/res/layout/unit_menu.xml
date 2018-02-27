@@ -15,26 +15,67 @@
         android:layout_weight="1"
         >
 
-        <ImageView
-            android:id="@+id/unit_length"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_weight="1"
-            android:src="@drawable/length"
-            android:padding="50dp"
             android:background="@drawable/border"
-            />
+            >
 
-        <ImageView
-            android:id="@+id/unit_volume"
+            <ImageView
+                android:id="@+id/unit_length"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/length"
+                android:paddingTop="50dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingBottom="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Length"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:padding="10sp"
+                android:fontFamily="sans-serif-light"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_weight="1"
-            android:src="@drawable/volume"
-            android:padding="50dp"
             android:background="@drawable/border"
-            />
+            >
 
+            <ImageView
+                android:id="@+id/unit_volume"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/volume"
+                android:paddingTop="50dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingBottom="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Volume"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:padding="10sp"
+                android:fontFamily="sans-serif-light"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -46,26 +87,67 @@
         android:layout_weight="1"
         >
 
-        <ImageView
-            android:id="@+id/unit_area"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_weight="1"
-            android:src="@drawable/area"
-            android:padding="50dp"
             android:background="@drawable/border"
-            />
+            >
 
-        <ImageView
-            android:id="@+id/unit_temperature"
+            <ImageView
+                android:id="@+id/unit_area"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/area"
+                android:paddingTop="50dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingBottom="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Area"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:padding="10sp"
+                android:fontFamily="sans-serif-light"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_weight="1"
-            android:src="@drawable/temperature"
-            android:padding="50dp"
             android:background="@drawable/border"
-            />
+            >
 
+            <ImageView
+                android:id="@+id/unit_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/temperature"
+                android:paddingTop="50dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingBottom="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Temperature"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:padding="10sp"
+                android:fontFamily="sans-serif-light"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -77,26 +159,67 @@
         android:layout_weight="1"
         >
 
-        <ImageView
-            android:id="@+id/unit_weight"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_weight="1"
-            android:src="@drawable/weight"
-            android:padding="50dp"
             android:background="@drawable/border"
-            />
+            >
 
-        <ImageView
-            android:id="@+id/unit_data"
+            <ImageView
+                android:id="@+id/unit_weight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/weight"
+                android:paddingTop="50dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingBottom="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Weight"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:padding="10sp"
+                android:fontFamily="sans-serif-light"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_weight="1"
-            android:src="@drawable/data"
-            android:padding="50dp"
             android:background="@drawable/border"
-            />
+            >
 
+            <ImageView
+                android:id="@+id/unit_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/data"
+                android:paddingTop="50dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingBottom="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:padding="10sp"
+                android:fontFamily="sans-serif-light"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 

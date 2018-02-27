@@ -70,12 +70,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/red"
                 android:fontFamily="sans-serif-light"
                 android:text="C"
                 android:textSize="30sp"
                 android:gravity="center"
-                android:background="@drawable/border"
+
                 />
             <TextView
                 android:id="@+id/plusminusTx"
@@ -84,7 +84,6 @@
                 android:textColor="@color/colorPrimary"
                 android:layout_weight="1"
                 android:text="^"
-                android:background="@drawable/border"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
                 android:gravity="center"/>
@@ -95,7 +94,6 @@
                 android:textColor="@color/colorPrimary"
                 android:layout_weight="1"
                 android:text="%"
-                android:background="@drawable/border"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
                 android:gravity="center"/>
@@ -106,7 +104,6 @@
                 android:layout_weight="1"
                 android:textColor="@color/colorPrimary"
                 android:text="/"
-                android:background="@drawable/border"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
                 android:gravity="center"/>
@@ -114,7 +111,6 @@
         <LinearLayout
             android:layout_weight="1"
             android:weightSum="4"
-            android:background="@color/shadow"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -124,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:textColor="@color/colorAccent"
                 android:fontFamily="sans-serif-light"
                 android:text="7"
@@ -140,7 +136,7 @@
                 android:textColor="@color/colorAccent"
                 android:text="8"
                 android:layout_marginTop="2dp"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
                 android:gravity="center"/>
@@ -152,7 +148,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="2dp"
                 android:text="9"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:textColor="@color/colorAccent"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
@@ -163,17 +159,16 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="x"
-                android:background="@drawable/border"
                 android:textColor="@color/colorPrimary"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:background="@color/colorPrimaryDark"/>
         </LinearLayout>
         <LinearLayout
             android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:background="@color/shadow"
             android:layout_height="match_parent">
 
             <TextView
@@ -181,7 +176,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:textColor="@color/colorAccent"
                 android:fontFamily="sans-serif-light"
                 android:text="4"
@@ -192,7 +187,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:text="5"
                 android:textColor="@color/colorAccent"
                 android:fontFamily="sans-serif-light"
@@ -205,7 +200,7 @@
                 android:layout_weight="1"
                 android:text="6"
                 android:textColor="@color/colorAccent"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
                 android:layout_marginRight="2dp"
@@ -216,10 +211,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="-"
-                android:background="@drawable/border"
                 android:textColor="@color/colorPrimary"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
+                android:background="@color/colorPrimaryDark"
                 android:gravity="center"/>
 
         </LinearLayout>
@@ -227,7 +222,6 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:background="@color/shadow"
             android:layout_height="match_parent">
 
             <TextView
@@ -235,7 +229,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:textColor="@color/colorAccent"
                 android:fontFamily="sans-serif-light"
                 android:text="1"
@@ -250,7 +244,7 @@
                 android:textColor="@color/colorAccent"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/threeTx"
@@ -259,7 +253,7 @@
                 android:layout_weight="1"
                 android:text="3"
                 android:textColor="@color/colorAccent"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
                 android:layout_marginRight="2dp"
@@ -270,7 +264,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="+"
-                android:background="@drawable/border"
+                android:background="@color/colorPrimaryDark"
                 android:textColor="@color/colorPrimary"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"
@@ -281,7 +275,6 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:background="@color/shadow"
             android:layout_height="match_parent">
 
             <TextView
@@ -292,7 +285,7 @@
                 android:textColor="@color/colorAccent"
                 android:fontFamily="sans-serif-light"
                 android:text="00"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:textSize="30sp"
                 android:gravity="center"/>
             <TextView
@@ -300,7 +293,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:text="0"
                 android:textColor="@color/colorAccent"
                 android:fontFamily="sans-serif-light"
@@ -312,7 +305,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="."
-                android:background="@drawable/border"
+                android:background="@drawable/border_calc"
                 android:textColor="@color/colorAccent"
                 android:fontFamily="sans-serif-light"
                 android:textSize="30sp"

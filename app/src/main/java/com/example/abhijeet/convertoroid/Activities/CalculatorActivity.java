@@ -256,9 +256,6 @@ public class CalculatorActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-//                mExplosionField.explode(resultTextView);
-//                mExplosionField.explode(summuryTextView);
-
                 resultTextView.setText("0");
                 summuryTextView.setText("");
 
