@@ -45,6 +45,7 @@
                 android:textSize="20sp"
                 android:textColor="@color/colorPrimary"
                 android:gravity="right"
+                android:fontFamily="sans-serif"
                 />
 
         </LinearLayout>
@@ -61,7 +62,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/colorAccent"
+            android:background="@color/shadow"
             />
 
         <LinearLayout
@@ -90,6 +91,7 @@
                 android:textSize="20sp"
                 android:textColor="@color/colorPrimary"
                 android:gravity="right"
+                android:fontFamily="sans-serif"
                 />
 
         </LinearLayout>
@@ -107,7 +109,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/colorAccent"
+            android:background="@color/shadow"
             />
 
         <LinearLayout
